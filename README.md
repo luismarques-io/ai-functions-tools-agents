@@ -26,6 +26,8 @@ pip install --upgrade langchain
 pip install -U langchain-community
 pip install -U docarray
 pip install BeautifulSoup4
+pip install wikipedia
+pip install openapi-schema-pydantic==1.2.4 # for OpenAPISpec.from_text()
 
 # Activate the conda environment
 conda activate ai-dev
