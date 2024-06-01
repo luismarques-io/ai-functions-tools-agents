@@ -25,6 +25,7 @@ pip install openai langchain-openai
 pip install --upgrade langchain
 pip install -U langchain-community
 pip install -U docarray
+pip install BeautifulSoup4
 
 # Activate the conda environment
 conda activate ai-dev
