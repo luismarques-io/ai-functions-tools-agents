@@ -18,8 +18,13 @@ conda init zsh # Optional: Initialize conda for zsh
 conda config --add channels conda-forge # Add conda-forge channel to install tiktoken and python-dotenv
 
 # Create a new conda environment "ai-dev"
-conda create -n ai-dev python=3.11 openai tiktoken python-dotenv python-dotenv-with-cli panel jupyter_bokeh
+conda create -n ai-dev python=3.11 openai tiktoken python-dotenv python-dotenv-with-cli panel jupyter_bokeh langchain pydantic docarray
 conda info --envs
+
+pip install openai langchain-openai
+pip install --upgrade langchain
+pip install -U langchain-community
+pip install -U docarray
 
 # Activate the conda environment
 conda activate ai-dev

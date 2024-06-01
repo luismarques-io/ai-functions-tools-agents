@@ -889,3 +889,20 @@ def create_products():
         json.dump(products, file)
 
     return products
+
+
+def to_dict(obj):
+    if isinstance(obj, dict):
+        return {k: to_dict(v) for k, v in obj.items()}
+    elif hasattr(obj, "__dict__"):
+        return {k: to_dict(v) for k, v in obj.__dict__.items()}
+    elif hasattr(obj, "__iter__") and not isinstance(obj, str):
+        return [to_dict(v) for v in obj]
+    elif hasattr(obj, "to_dict"):
+        return obj.to_dict()  # Call the to_dict method of the object
+    else:
+        return obj
+
+
+def print_as_json(obj):
+    print(json.dumps(to_dict(obj), indent=4, default=str))
